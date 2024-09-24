@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversão Numérica</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="fundodapagina">
+    <div class="fundotexto">
+        <div>
+            <h1>Conversão Numerica</h1>
+            <p><b>Decimal</b></p>
+            <input type="text" id="input_decimal">
+
+            <p><b>Binario</b></p>
+            <input type="checkbox" id="input_binario">
+            <div id="binario"></div>
+
+            <p><b>Octal</b></p>
+            <input type="checkbox" id="input_octal">
+            <div id="octal"></div>
+
+            <p><b>Hexadecimal</b></p>
+            <input type="checkbox" id="input_hexadecimal">
+            <div id="hexadecimal"></div>
+            <br>
+            
+            <button class="btn" onclick="calcular()">Calcular</button>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    function calcular() {
+        var numero_decimal = Number(input_decimal.value)
+        var Binario = input_binario.checked
+        var Octal = input_octal.checked
+        var Hexadecimal = input_hexadecimal.checked;
+        var numeroBin = numero_decimal.toString(2)
+        var numeroOctal = numero_decimal.toString(8)
+        var numeroHexa = numero_decimal.toString(16).toUpperCase()
+
+        if (Binario) {
+            binario.innerHTML = ` Em binário: ${numeroBin}`
+        }
+
+        if (Octal) {
+            octal.innerHTML = `Em octal: ${numeroOctal}`
+        }
+
+        if (Hexadecimal) {
+            hexadecimal.innerHTML = `Em hexadecimal: ${numeroHexa}`
+        }
+
+
+    }
+
+</script>
